@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="حضانة الإيمان الخاصة - بيئة آمنة ونظيفة، تأهيل للمدارس اللغات والتجريبي، وتعليم منتسوري. تحت إشراف ميس إيمان دره.">
+  <meta name="keywords" content="حضانة, حضانة الإيمان, رياض أطفال, منتسوري, تأسيس أطفال, نور البيان">
+  <title>حضانة الإيمان الخاصة</title>
+  <style>
+    :root {
+      --blue-main: #1B52A4;
+      --pink-accent: #E54178;
+      --green-light: #8CC63F;
+      --yellow-bright: #FCEE21;
+      --bg-soft: #F4F8FC;
+      --text-dark: #2C3E50;
+    }
+    
+    /* تفعيل التمرير الناعم */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-soft);
+      color: var(--text-dark);
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* Header */
+    header {
+      background: #fff;
+      border-bottom: 5px solid var(--green-light);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 0;
+      flex-wrap: wrap;
+    }
+    .brand-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-text {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--blue-main);
+    }
+    .logo-sub {
+      font-size: 0.85rem;
+      color: var(--pink-accent);
+      font-weight: bold;
+      display: block;
+    }
+    
+    /* Navigation */
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: var(--pink-accent);
+    }
+    
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: var(--blue-main);
+      cursor: pointer;
+    }
+
+    /* Buttons */
+    .btn {
+      padding: 0.7rem 1.4rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      transition: transform 0.2s;
+      text-align: center;
+    }
+    .btn:hover { transform: scale(1.04); }
+    .btn-blue { background: var(--blue-main); color: #fff; }
+    .btn-pink { background: var(--pink-accent); color: #fff; }
+    .btn-green { background: var(--green-light); color: #fff; }
+
+    /* Hero Section */
+    .hero {
+      padding: 3.5rem 0;
+      text-align: center;
+      background: linear-gradient(180deg, #E8F1FC 0%, var(--bg-soft) 100%);
+      border-bottom: 3px dashed var(--green-light);
+    }
+    .hero h1 { font-size: 2.8rem; color: var(--blue-main); margin-bottom: 0.2rem; }
+    .supervisor-badge {
+      background: #fff;
+      border: 2px solid var(--pink-accent);
+      color: var(--pink-accent);
+      padding: 5px 20px;
+      border-radius: 20px;
+      display: inline-block;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    .hero-slogan {
+      font-size: 1.4rem;
+      color: var(--green-light);
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Features Grid */
+    .features-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    .feature-pill {
+      background: var(--green-light);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+    .feature-pill:nth-child(2n) { background: var(--blue-main); }
+    .feature-pill:nth-child(3n) { background: var(--pink-accent); }
+
+    /* Cards Section */
+    .grid-4 { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+      gap: 1.2rem; 
+      margin-top: 2rem;
+    }
+    .card-curriculum {
+      background: #fff;
+      border-radius: 15px;
+      padding: 1.2rem;
+      text-align: center;
+      border-top: 5px solid var(--blue-main);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+      transition: transform 0.3s;
+    }
+    .card-curriculum:hover {
+      transform: translateY(-5px);
+    }
+    .card-curriculum h4 {
+      color: var(--blue-main);
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+
+    /* Transport Section */
+    .transport-card {
+      background: #fff;
+      border-radius: 20px;
+      border: 2px dashed var(--green-light);
+      padding: 1.8rem;
+      margin: 2.5rem 0;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+    .transport-card h3 {
+      color: var(--blue-main);
+      font-size: 1.6rem;
+      margin-top: 0;
+    }
+
+    /* Contact Section */
+    .contact-card {
+      background: #fff;
+      border: 3px solid var(--blue-main);
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--blue-main);
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem 0;
+      margin-top: 3rem;
+    }
+
+    /* Media Queries للموبايل */
+    @media (max-width: 850px) {
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background: #fff;
+        padding: 1rem 0;
+        gap: 1rem;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .nav-links li {
+        width: 100%;
+      }
+      .nav-wrapper .btn-blue {
+        display: none; /* إخفاء الزر في الشاشات الصغيرة لتوفير المساحة */
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .features-wrapper {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav-wrapper">
+      <div class="brand-box">
+        <div>
+          <span class="logo-text">حضانة الإيمان</span>
+          <span class="logo-sub">حضانة الإيمان الخاصة Al-Eman-nursery</span>
+        </div>
+      </div>
+      
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" onclick="toggleMenu()">الرئيسية</a></li>
+        <li><a href="#features" onclick="toggleMenu()">مميزاتنا</a></li>
+        <li><a href="#curriculum" onclick="toggleMenu()">المناهج والبرامج</a></li>
+        <li><a href="#transport" onclick="toggleMenu()">توصيل الأطفال</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">تواصل معنا</a></li>
+        <li><a href="https://www.facebook.com/share/1AoNgcwgvL/" target="_blank" style="color: var(--blue-main);">فيسبوك</a></li>
+      </ul>
+      
+      <a href="https://www.facebook.com/share/1AoNgcwgvL/" target="_blank" class="btn btn-blue" id="desktop-fb-btn">صفحتنا على فيسبوك</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <h1>حضانة الإيمان الخاصة</h1>
+      <div class="supervisor-badge">تحت إشراف: ميس إيمان دره</div>
+      <p class="hero-slogan">نرعي طفلك.... لنصنع منه مستقبلاً مشرقاً ✨</p>
+      
+      <div id="features" class="features-wrapper">
+        <div class="feature-pill">🛡️ بيئة آمنة ونظيفة</div>
+        <div class="feature-pill">🏫 تأهيل للمدارس اللغات والتجريبي</div>
+        <div class="feature-pill">🧩 تعليم منتسوري</div>
+        <div class="feature-pill">📖 تدريس بكتاب نور البيان</div>
+        <div class="feature-pill">🎨 أنشطة ترفيهية وتعليمية</div>
+        <div class="feature-pill">🚌 توفر سيارة توصيل للأطفال</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curriculum Section -->
+  <section id="curriculum" class="container" style="padding: 2rem 0;">
+    <h2 style="text-align: center; color: var(--blue-main); font-size: 2rem;">برامجنا التعليمية والتربوية</h2>
+    <div class="grid-4">
+      <div class="card-curriculum">
+        <h4>💡 تعليم حديث وتفاعلي</h4>
+        <p>استخدام أحدث الوسائل التفاعلية للشرح وتوصيل المعلومة.</p>
+      </div>
+      <div class="card-curriculum">
+        <h4>🕌 تحفيظ قرآن وأحاديث وأدعية</h4>
+        <p>غرس القيم الإسلامية وحفظ كتاب الله والأدعية اليومية.</p>
+      </div>
+      <div class="card-curriculum">
+        <h4>🧮 تدريس الحساب [Math]</h4>
+        <p>تأسيس قوي للمفاهيم الرياضية باللغتين العربية والإنجليزية.</p>
+      </div>
+      <div class="card-curriculum">
+        <h4>🔤 تأسيس اللغات</h4>
+        <p>تأسيس شامل للغة العربية واللغة الإنجليزية للأطفال.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transport Section -->
+  <section id="transport" class="container">
+    <div class="transport-card">
+      <h3>🚌 خدمة توصيل الأطفال (سيارة الحضانة)</h3>
+      <p style="font-size: 1.1rem;">نوفر خدمة توصيل آمنة ومريحة لأطفالنا من وإلى الحضانة.</p>
+      <p style="font-size: 1.2rem; font-weight: bold; color: var(--pink-accent);">مسؤول التوصيل: أ / طه درة</p>
+      <p>📞 <strong>الهاتف / واتساب:</strong> <a href="tel:01210946903" style="color: var(--blue-main); text-decoration: none; font-weight: bold; font-size: 1.2rem;">01210946903</a></p>
+      
+      <div style="margin-top: 1rem; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+        <a href="https://wa.me/201210946903" class="btn btn-green" target="_blank">تواصل عبر الواتساب</a>
+        <a href="tel:01210946903" class="btn btn-pink">اتصال بمسؤول التوصيل</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Info -->
+  <section id="contact" class="container">
+    <div class="contact-card">
+      <h3 style="color: var(--pink-accent); font-size: 1.8rem; margin-top: 0;">للتواصل والاستفسار</h3>
+      <p style="font-size: 1.2rem; font-weight: bold;">ميس إيمان دره</p>
+      <p>📍 <strong>العنوان:</strong> فيشا الكبرى، طريق مطحن شرع الله، وسط السوق، بجوار صيدلية الدكتورة أماني فهمي محمد.</p>
+      <p>📞 <strong>الهاتف / واتساب:</strong> <a href="tel:01225742520" style="color: var(--blue-main); text-decoration: none; font-weight: bold; font-size: 1.3rem;">01225742520</a></p>
+      
+      <div style="margin-top: 1.5rem; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+        <a href="https://wa.me/201225742520" class="btn btn-green" target="_blank">تواصل عبر الواتساب</a>
+        <a href="tel:01225742520" class="btn btn-blue">اتصل الآن</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>حضانة الإيمان الخاصة - نرعي طفلك.... لنصنع منه مستقبلاً مشرقاً</p>
+    <p>© 2026 جميع الحقوق محفوظة</p>
+  </footer>
+
+  <!-- جافاسكريبت بسيطة لتشغيل القائمة على الهواتف -->
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>
